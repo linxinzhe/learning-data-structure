@@ -3,4 +3,4 @@ project(learning_data_structure)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(learning_data_structure sort/selection_sort2.cpp sort/Student.h)
+add_executable(learning_data_structure sort/selection_sort2.cpp sort/Student.h sort/SortTestHelper.h)
