@@ -18,6 +18,11 @@ struct Student {
         return score < otherStudent.score;
     }
 
+    bool operator>(const Student &otherStudent) {
+        return score > otherStudent.score;
+    }
+
+
     friend ostream &operator<<(ostream &os, const Student &student) {
         os << "Student: " << "name: " << student.name << " score: " << student.score;
         return os;
