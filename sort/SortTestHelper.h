@@ -37,7 +37,7 @@ namespace SortTestHelper {
 
     template<typename T>
     bool isSorted(T arr[], int n) {
-        for (int i = 0; i < n-1; ++i) {
+        for (int i = 0; i < n - 1; ++i) {
             if (arr[i] > arr[i + 1]) {
                 return false;
             }
@@ -53,6 +53,12 @@ namespace SortTestHelper {
 
         assert(isSorted(arr, n));
         cout << sortName << " : " << double(endTime - startTime) / CLOCKS_PER_SEC << " s" << endl;
+    }
+
+    int *copyIntArray(int a[], int n) {
+        int *arr = new int[n];
+        copy(a, a + n, arr);
+        return arr;
     }
 }
 #endif //LEARNING_DATA_STRUCTURE_SORTTESTHELPER_H

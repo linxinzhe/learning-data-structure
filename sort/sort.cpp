@@ -4,7 +4,8 @@
 
 using namespace std;
 
-void selectionSort(int arr[], int n) {
+template<typename T>
+void selectionSort(T arr[], int n) {
     for (int i = 0; i < n; i++) {
         int minIndex = i;
         for (int j = i + 1; j < n; j++) {
@@ -16,11 +17,26 @@ void selectionSort(int arr[], int n) {
     }
 }
 
+
+template<typename T>
+void insertionSort(T arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        for (int j = i; j > 0; j--) {
+            if (arr[j] < arr[j - 1]) {
+                swap(arr[j], arr[j - 1]);
+            }else{
+                break;
+            }
+        }
+    }
+}
+
 int main() {
     int n = 10000;
     int *arr = SortTestHelper::generateRandomArray(n, 0, n);
-//    selectionSort(arr, n);
-//    SortTestHelper::printArray(arr, n);
+    int *arr2 = SortTestHelper::copyIntArray(arr, n);
+
+    SortTestHelper::testSort("Insertion Sort", insertionSort, arr, n);
     SortTestHelper::testSort("Selection Sort", selectionSort, arr, n);
 
     delete[] arr;
