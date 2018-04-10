@@ -3,4 +3,4 @@ project(learning_data_structure)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(learning_data_structure search/binary_search.cpp)
+add_executable(learning_data_structure heap/heap.cpp)
